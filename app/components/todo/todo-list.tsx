@@ -1,7 +1,8 @@
 import { useState } from "react";
+import TodoItem from "./todo-item";
 
 // Define our Todo item type
-type Todo = {
+export type Todo = {
   id: number;
   text: string;
   completed: boolean;
@@ -87,29 +88,7 @@ export function TodoApp() {
           </li>
         ) : (
           filteredTodos.map((todo) => (
-            <li key={todo.id} className="py-3 flex justify-between items-center">
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  checked={todo.completed}
-                  onChange={() => toggleTodo(todo.id)}
-                  className="h-5 w-5 text-blue-500 focus:ring-blue-400 mr-2"
-                />
-                <span
-                  className={`${
-                    todo.completed ? "line-through text-gray-400" : "text-white"
-                  }`}
-                >
-                  {todo.text}
-                </span>
-              </div>
-              <button
-                onClick={() => deleteTodo(todo.id)}
-                className="btn-danger"
-              >
-                Delete
-              </button>
-            </li>
+            <TodoItem key={todo.id} todo={todo} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
           ))
         )}
       </ul>
