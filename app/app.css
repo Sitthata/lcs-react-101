@@ -17,3 +17,7 @@ body {
 .btn-primary {
   @apply bg-blue-500 text-white p-2 rounded-md cursor-pointer;
 }
+
+.btn-danger {
+  @apply bg-red-500 text-white p-2 rounded-md cursor-pointer;
+}
