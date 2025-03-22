@@ -1,13 +1,8 @@
 
-type PictureProps = {
-  src: string;
-  alt: string;
-};
-
-export default function Picture({ src, alt }: PictureProps) {
+export default function Picture() {
   return (
     <div>
-      <img src={src} alt={alt} className="w-full h-full object-cover" />
+      <img src="https://picsum.photos/200/300" alt="random" className="w-full h-full object-cover" />
     </div>
   );
 }
