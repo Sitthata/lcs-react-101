@@ -30,11 +30,15 @@ export default function Form() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn-primary">
+          Submit
+        </button>
       </form>
-      <p>Submitted: {JSON.stringify(submitted)}</p>
-      <p>Name: {name}</p>
-      <p>Email: {email}</p>
+      <div className="mt-10">
+        <p>Submitted: {JSON.stringify(submitted)}</p>
+        <p>Name: {name}</p>
+        <p>Email: {email}</p>
+      </div>
     </>
   );
 }
